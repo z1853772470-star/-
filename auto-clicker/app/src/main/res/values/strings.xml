@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">连点器</string>
+    <string name="start_overlay">启动悬浮球</string>
+    <string name="stop_overlay">关闭悬浮球</string>
+    <string name="start_clicking">开始连点</string>
+    <string name="stop_clicking">停止连点</string>
+    <string name="add_button">添加按钮</string>
+    <string name="save_task">保存任务</string>
+    <string name="delete_task">删除任务</string>
+    <string name="task_name">任务名称</string>
+    <string name="click_count">点击次数</string>
+    <string name="click_duration">点击时长(ms)</string>
+    <string name="click_interval">点击间隔(ms)</string>
+    <string name="float_overlay_running">悬浮球运行中</string>
+    <string name="accessibility_running">无障碍服务运行中</string>
+    <string name="no_tasks">暂无任务，点击右下角 + 新建任务</string>
+</resources>
