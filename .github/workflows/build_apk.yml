@@ -1,0 +1,37 @@
+name: 自动构建安卓APK
+on:
+  # 推送代码就自动打包
+  push:
+    branches: [ main, master ]
+  # 支持手动点击按钮打包
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 拉取仓库代码
+      - name: 拉取源码
+        uses: actions/checkout@v4
+
+      # 配置编译所需Java环境
+      - name: 配置JDK17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      # 赋予编译脚本权限
+      - name: 权限授权
+        run: chmod +x gradlew
+
+      # 编译Debug测试包
+      - name: 编译APK
+        run: ./gradlew assembleDebug
+
+      # 上传成品APK
+      - name: 上传打包文件
+        uses: actions/upload-artifact@v4
+        with:
+          name: 打包好的APK
+          path: app/build/outputs/apk/debug/*.apk
